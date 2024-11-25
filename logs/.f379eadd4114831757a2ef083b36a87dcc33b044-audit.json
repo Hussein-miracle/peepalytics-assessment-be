@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/abdullahi/Desktop/peepalytics-be/logs/.f379eadd4114831757a2ef083b36a87dcc33b044-audit.json",
+    "files": [
+        {
+            "date": 1732554568763,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-18-error.log",
+            "hash": "5ed2ab62961e7cf0c5b15b3ae9f33aa92ddc9beca10389c7410da1a7925887f6"
+        },
+        {
+            "date": 1732561816538,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-20-error.log",
+            "hash": "42e3d16baa0c9c68a50bbef3e416578cf685f29a8ef22ef840d497cb9d073b68"
+        },
+        {
+            "date": 1732565077018,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-21-error.log",
+            "hash": "b0aa9f5364aa795bc89507b4c0e6fb4771721d8e9b45098ac503e47dfebb5eda"
+        },
+        {
+            "date": 1732569242408,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-22-error.log",
+            "hash": "bcd099d15680de283cdc8230ea04e16eee6b5f3ab15062b98b39ade0959abbec"
+        }
+    ],
+    "hashType": "sha256"
+}

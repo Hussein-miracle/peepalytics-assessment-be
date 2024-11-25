@@ -1,4 +1,5 @@
 import winston from 'winston';
+import fs from 'fs';
 import DailyRotateFile  from 'winston-daily-rotate-file';
 import path from 'path';
 import { NextFunction, Request, Response } from 'express';
@@ -25,10 +26,10 @@ const logFormat = winston.format.combine(
 );
 
 // Create log directory if it doesn't exist
-const logDir = 'logs';
-const logsFolderExists =  require('fs').existsSync(logDir);
+const logDir = path.join(process.cwd(), 'logs');
+const logsFolderExists = fs.existsSync(logDir);
 if (!logsFolderExists) {
-    require('fs').mkdirSync(logDir);
+    fs.mkdirSync(logDir,{recursive:true});
 }
 
 // Configure daily rotate file for different log levels
@@ -73,13 +74,6 @@ if (process.env.NODE_ENV !== 'production') {
     }));
 }
 
-// Create a stream object for Morgan
-const stream = {
-    write: (message: string) => {
-        logger.info(message.trim());
-    }
-};
-
 // Custom logging functions
 const customLogger = {
     error: (message: string, meta?: any) => {
@@ -116,15 +110,7 @@ const customLogger = {
 
         next();
     },
-    // Log payment transactions
-    logPaymentTransaction: (transactionData: any) => {
-        logger.info('Payment Transaction', {
-            transactionId: transactionData.id,
-            amount: transactionData.amount,
-            status: transactionData.status,
-            timestamp: new Date().toISOString()
-        });
-    },
+
     // Log security events
     logSecurityEvent: (event: string, details: any) => {
         logger.warn('Security Event', {
@@ -135,4 +121,4 @@ const customLogger = {
     }
 };
 
-export { customLogger as logger, stream };
+export { customLogger as logger};

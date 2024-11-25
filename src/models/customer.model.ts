@@ -4,9 +4,11 @@ import { Column, CreatedAt, DataType, Model, PrimaryKey, Table, Unique, UpdatedA
 
 @Table({
   tableName: 'customers',
+  modelName: 'Customer',
+  timestamps:true,
 })
 
-class Customer extends Model<InferAttributes<Customer>,InferCreationAttributes<Customer>>{
+class Customer extends Model{
   @PrimaryKey
   @Column({
     type: DataType.UUID,

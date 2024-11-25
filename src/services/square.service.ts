@@ -57,10 +57,11 @@ class SquarePaymentService {
       // Log successful payment
       await this.logPaymentProcessSuccess(response);
 
+      const payment = response?.result?.payment;
       return {
         success: true,
-        transactionId: response?.result?.payment?.id,
-        status: response?.result?.payment?.status,
+        status: payment?.status,
+        paymentDetails:{...payment}
       };
     } catch (error: unknown) {
       // Handle and log payment failure
@@ -75,7 +76,7 @@ class SquarePaymentService {
     }
   }
 
-  async retrievalPayment(payment_id: string) {
+  async retrievePayment(payment_id: string) {
     try {
       this.logPaymentRetrievalAttempt(payment_id);
       const response = await this.squareClient.paymentsApi.getPayment(
@@ -85,13 +86,16 @@ class SquarePaymentService {
       this.logPaymentRetrievalSuccess(response);
 
       const payment = response?.result?.payment;
+      const amount = Number(payment?.amountMoney?.amount) / 100;
       return {
         success: true,
         data: {
-          amount:payment?.amountMoney?.amount,
+          amount,
+          currency:payment?.amountMoney?.currency,
           status:payment?.status,
           created_at:payment?.createdAt,
-          updated_at:payment?.updatedAt
+          updated_at:payment?.updatedAt,
+          walletDetails:payment?.walletDetails,
         },
       };
     } catch (error: unknown) {

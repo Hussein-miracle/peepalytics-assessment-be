@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/abdullahi/Desktop/peepalytics-be/logs/.0640078439c9a726aaacd02a65ce44ffa7394f1c-audit.json",
+    "files": [
+        {
+            "date": 1732554568762,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-18-combined.log",
+            "hash": "1804d0caf2b8b32d3b81d3f5ab891f16ee23f812a5535a0bb48bf4772916c4b0"
+        },
+        {
+            "date": 1732561816536,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-20-combined.log",
+            "hash": "a8efcb3331b1046ee1c8070347f687d3ee70faae8ffc2d0cb31a05558b81581a"
+        },
+        {
+            "date": 1732565077016,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-21-combined.log",
+            "hash": "820c64b52aa3a3920b144f790bdc24b40cdda328ee1c2dcc5cd9d1a83c2ef60d"
+        },
+        {
+            "date": 1732569242407,
+            "name": "/Users/abdullahi/Desktop/peepalytics-be/logs/2024-11-25-22-combined.log",
+            "hash": "4164de4984217043e7cdf62a80ecce4c9cb779cd50a299ddabba5664768c3160"
+        }
+    ],
+    "hashType": "sha256"
+}
