@@ -15,7 +15,5 @@ export function errorHandler(err:Error,req:Request,res:Response,next:NextFunctio
 
 
 export function notFoundHandler(req:Request,res:Response,next:NextFunction){
-  const err = new Error("Route does not exist")
-  LoggerMiddleware.errorLogger(err,req,res,next);
   res.status(404).json({message:"Api route does not exist"});
 }
