@@ -7,7 +7,7 @@ class LoggerMiddleware {
         logger.info(`Incoming ${req.method} request to ${req.url}`, {
             headers: req.headers,
             query: req.query,
-            body: this.sanitizeBody(req.body)
+            body: LoggerMiddleware.sanitizeBody(req.body)
         });
 
         // Store start time
