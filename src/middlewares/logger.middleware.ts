@@ -37,7 +37,7 @@ class LoggerMiddleware {
         next(error);
     }
 
-    private static sanitizeBody(body: Request['body']) {
+    static sanitizeBody(body: Request['body']) {
         if (!body) return body;
         
         const sanitized = { ...body };
